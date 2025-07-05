@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>환영합니다!</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen flex items-center justify-center bg-gray-50 px-4">
+<div class="w-full max-w-md bg-white shadow-md rounded-xl">
+    <div class="p-6 text-center space-y-1">
+        <h2 class="text-2xl font-bold text-green-600">환영합니다! 🎉</h2>
+        <p class="text-gray-700 text-sm" th:text="${username} + '님, 성공적으로 로그인되었습니다'">사용자님, 성공적으로 로그인되었습니다</p>
+    </div>
+
+    <div class="px-6 pb-6">
+        <div class="text-center space-y-4">
+            <p class="text-gray-600">서비스를 이용해보세요!</p>
+            <form th:action="@{/logout}" method="post">
+                <button type="submit"
+                        class="w-full border border-gray-300 hover:bg-gray-100 text-gray-700 py-2 px-4 rounded-md">
+                    로그아웃
+                </button>
+            </form>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>
